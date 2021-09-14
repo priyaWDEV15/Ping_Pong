@@ -1,6 +1,8 @@
 #ping-pong game
 
 import turtle
+import winsound 
+
 win= turtle.Screen()
 win.title("Pong")
 win.bgcolor("black")
@@ -15,7 +17,7 @@ score_b = 0
 paddle_a = turtle.Turtle()
 paddle_a.speed(0)
 paddle_a.shape("square")
-paddle_a.color("white")
+paddle_a.color("Green")
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
 paddle_a.goto(-350, 0)
@@ -26,7 +28,7 @@ paddle_a.goto(-350, 0)
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
-paddle_b.color("white")
+paddle_b.color("Green")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 paddle_b.goto(350, 0)
@@ -102,6 +104,7 @@ while True:
         score_a += 1
         pen.clear()
         pen.write("Player 1: {} Player 2: {}".format(score_a, score_b), align= "center", font=("Courier",20, "normal"))
+        winsound.PlaySound("wallhit.wav", winsound.SND_ASYNC)
 
     if ball.xcor() < -390:
         ball.goto(0, 0)
@@ -109,12 +112,15 @@ while True:
         score_b += 1
         pen.clear()
         pen.write("Player 1: {} Player 2: {}".format(score_a, score_b), align= "center", font=("Courier",20, "normal"))
+        winsound.PlaySound("wallhit.wav", winsound.SND_ASYNC)
 
     #paddle and ball collision
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 50 and ball.ycor() > paddle_b.ycor() - 50):
         ball.setx(340)
         ball.dx *= -1
+        winsound.PlaySound("paddle.wav", winsound.SND_ASYNC)
 
     if (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 50 and ball.ycor() > paddle_a.ycor() - 50):
         ball.setx(-340)
         ball.dx *= -1
+        winsound.PlaySound("paddle.wav", winsound.SND_ASYNC)
