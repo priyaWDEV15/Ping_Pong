@@ -50,7 +50,7 @@ pen.color("Yellow")
 pen.penup()
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player 1: 0 Player 2: 0", align= "center", font=("Courier",20, "normal"))
+pen.write("Player 1: 0                  Player 2: 0", align= "center", font=("Monaco",15, "normal"))
 
 
 #Functions
@@ -103,7 +103,7 @@ while True:
         ball.dx *= -1
         score_a += 1
         pen.clear()
-        pen.write("Player 1: {} Player 2: {}".format(score_a, score_b), align= "center", font=("Courier",20, "normal"))
+        pen.write("Player 1: {}                  Player 2: {}".format(score_a, score_b), align= "center", font=("Monaco",15, "normal"))
         winsound.PlaySound("wallhit.wav", winsound.SND_ASYNC)
 
     if ball.xcor() < -390:
@@ -111,7 +111,7 @@ while True:
         ball.dx *= -1
         score_b += 1
         pen.clear()
-        pen.write("Player 1: {} Player 2: {}".format(score_a, score_b), align= "center", font=("Courier",20, "normal"))
+        pen.write("Player 1: {}                  Player 2: {}".format(score_a, score_b), align= "center", font=("Monaco",15, "normal"))
         winsound.PlaySound("wallhit.wav", winsound.SND_ASYNC)
 
     #paddle and ball collision
