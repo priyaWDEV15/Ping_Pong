@@ -21,5 +21,5 @@ It is a multiplayer Ping-Pong game which is written in python. Here turtle modul
 
 ## DEPENDENCIES
 
-1.Python v3.x is required.
-2.turtle module is also required.
+* Python v3.x is required.
+* turtle module is also required.
